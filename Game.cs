@@ -12,6 +12,7 @@ namespace Snake
         {
             fruit.setPosition();
 
+            // The game loop that runs until a gameover is reach
             while (gameOver != true)
             {
                 grid.draw(player.get_x(), player.get_y(), player.getTailX(), player.getTailY(), fruit.getX(), fruit.getY());
@@ -26,9 +27,12 @@ namespace Snake
             Console.WriteLine("\n\nScore: "+ player.getScore());
         }
 
+
+        // Initialises the game objects
         private Grid grid = new Grid();
         private Player player = new Player();
         private Fruit fruit = new Fruit();
+
         private bool gameOver = false;
         
         

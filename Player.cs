@@ -9,6 +9,7 @@ namespace Snake
     class Player : Grid
     {
 
+        // Handles the user input
         public void input()
         {
             var kp = Console.ReadKey();
@@ -33,6 +34,7 @@ namespace Snake
             }
         }
 
+        // Updates the player position and calls updateTail
         public void update()
         {
             prevTailX = x;
@@ -57,6 +59,7 @@ namespace Snake
             updateTail();
         }
 
+        // Updates the position of the tail of the snake
         private void updateTail()
         {
             int tempX = 0;
@@ -85,6 +88,7 @@ namespace Snake
             }
         }
 
+        // Checks if the snake colides with the walls or collects fruit
         public bool checkCollision(int fruitX, int fruitY, Fruit fruit)
         {
             if (x == fruitX && y == fruitY)
@@ -107,6 +111,7 @@ namespace Snake
 
         }
 
+        // Getters
         public int get_x()
         {
             return x;
@@ -131,7 +136,7 @@ namespace Snake
             return score;
         }
 
-
+        // Variables
         private int x = 6;
         private int y = 6;
 
